@@ -1,0 +1,36 @@
+{
+  "name": "graphql-guards",
+  "author": "NicolasGn",
+  "version": "1.0.0",
+  "description": "Directive based authorization layer for GraphQL servers.",
+  "license": "MIT",
+  "keywords": [
+    "graphql",
+    "directive",
+    "directives",
+    "apollo"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NicolasGn/graphql-simple-directives"
+  },
+  "scripts": {
+    "build": "tsc",
+    "publish": "yarn build && publish"
+  },
+  "dependencies": {
+    "@graphql-tools/utils": "^8.10.0",
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
