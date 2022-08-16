@@ -1,5 +1,8 @@
 # graphql-guards
 
+![CI](https://github.com/NicolasGn/graphql-guards/workflows/CI/badge.svg?branch=master)
+[![codecov](https://codecov.io/gh/NicolasGn/graphql-guards/branch/master/graph/badge.svg?token=YNZJ837ZHF)](https://codecov.io/gh/NicolasGn/graphql-guards)
+
 Simple authorization layer for your GraphQL server powered by directives.
 
 ## Features
