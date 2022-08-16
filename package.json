@@ -2,12 +2,13 @@
   "name": "graphql-guards",
   "author": "NicolasGn",
   "version": "1.0.0",
-  "description": "Directive based authorization layer for GraphQL servers.",
+  "description": "Simple authorization layer for your GraphQL server powered by directives.",
   "license": "MIT",
   "keywords": [
     "graphql",
+    "guard",
     "directive",
-    "directives",
+    "authorization",
     "apollo"
   ],
   "engines": {
