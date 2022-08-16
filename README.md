@@ -44,7 +44,7 @@ const typeDefs = /* GraphQL */ `
 
 const blockGuard: Guard = {
   name: 'block',
-  apply: (_directiveArgs) => async (_parent, _args, _context) => {
+  execute: (_directiveArgs) => async (_parent, _args, _context) => {
     throw new Error('You will never access this field or type.');
   },
 }

@@ -8,7 +8,7 @@ import {
 
 export interface Guard<TContext = any, TDirectiveArgs = any> {
   name: string;
-  apply: (
+  execute: (
     directiveArgs: TDirectiveArgs
   ) => GraphQLFieldResolver<any, TContext, any, void>;
 }
@@ -21,7 +21,7 @@ const setupGuardResolver = (
   directive: Directive
 ) => {
   const { resolve = defaultFieldResolver } = fieldConfig;
-  const guardResolver = guard.apply(directive);
+  const guardResolver = guard.execute(directive);
 
   fieldConfig.resolve = async (...args) => {
     await guardResolver(...args);
