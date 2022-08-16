@@ -1,3 +1,58 @@
 # graphql-guards
 
-Directive based authorization layer for GraphQL servers.
+Simple authorization layer for your GraphQL server powered by directives.
+
+## Features
+
+- Inspired by [NestJS guards](https://docs.nestjs.com/guards)
+- GraphQL server agnostic
+- 100% TypeScript
+- Fully tested
+
+## Installation
+
+```
+yarn add graphql-guards
+```
+
+## Quickstart
+
+```TypeScript
+import { makeExecutableSchema } from '@graphql-tools/schema';
+import { addGuards, Guard } from 'graphql-guards';
+import resolvers from './resolvers';
+
+const typeDefs = /* GraphQL */ `
+  directive @block on FIELD_DEFINITION | OBJECT
+
+  type BlockedData @block {
+    secret: String!
+  }
+
+  type PublicData {
+    publicField: String!
+    blockedField: String @block
+  }
+
+  type Query {
+    publicData: PublicData!
+    blockedData: BlockedData!
+    blockedQuery: String @block
+  }
+`;
+
+const blockGuard: Guard = {
+  name: 'block',
+  apply: (_directiveArgs) => async (_parent, _args, _context) => {
+    throw new Error('You will never access this field or type.');
+  },
+}
+
+let schema = makeExecutableSchema({
+  typeDefs,
+  resolvers,
+});
+
+// Here is your protected schema
+schema = addGuards(schema, [blockGuard]);
+```
