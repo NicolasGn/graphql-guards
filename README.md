@@ -6,7 +6,8 @@ Simple authorization layer for your GraphQL server powered by directives.
 
 - Inspired by [NestJS guards](https://docs.nestjs.com/guards)
 - GraphQL server agnostic
-- 100% TypeScript
+- Typeable context and directive arguments
+- Written in TypeScript
 - Fully tested
 
 ## Installation
