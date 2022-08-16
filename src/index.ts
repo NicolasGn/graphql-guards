@@ -29,7 +29,7 @@ const setupGuardResolver = (
   };
 };
 
-export const applyGuardsToSchema = (
+export const addGuards = (
   schema: GraphQLSchema,
   guards: Guard[]
 ): GraphQLSchema => {
