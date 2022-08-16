@@ -3,7 +3,9 @@
     "module": "commonjs",
     "target": "ES2018",
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
   },
   "include": ["src/**/*"]
 }

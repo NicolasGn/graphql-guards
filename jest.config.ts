@@ -1,5 +1,6 @@
-module.exports = {
-  collectCoverage: false,
+export default {
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.ts'],
   globals: {
     'ts-jest': {
       tsconfig: {
