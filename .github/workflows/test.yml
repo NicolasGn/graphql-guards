@@ -26,3 +26,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn test
+      - run: curl -Os https://uploader.codecov.io/latest/linux/codecov
+      - run: chmod +x codecov
+      - run: ./codecov
