@@ -1,7 +1,7 @@
 {
   "name": "graphql-guards",
   "author": "NicolasGn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple authorization layer for your GraphQL server powered by directives.",
   "license": "MIT",
   "keywords": [
@@ -25,8 +25,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "yarn test && tsc",
-    "publish": "yarn build && publish"
+    "build": "yarn test && tsc"
   },
   "dependencies": {
     "@graphql-tools/utils": "^8.10.0",
