@@ -63,7 +63,7 @@ schema = addGuards(schema, [blockGuard]);
 
 ## Usage
 
-A guard is basically a [directive](#) that can be applied on locations `FIELD_DEFINITION` and `OBJECT`. It means you can then use this directive on a query, a mutation, an object field, or a type definition.
+A guard is basically a [directive](https://www.graphql-tools.com/docs/schema-directives) that can be applied on locations `FIELD_DEFINITION` and `OBJECT`. It means you can then use this directive on a query, a mutation, an object field, or a type definition.
 
 The directive can take arguments that can be used in your guard execution logic.
 
