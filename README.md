@@ -104,6 +104,12 @@ The `execute` method of a Guard must return a GraphQL resolver. It's role will b
 
 **Example**
 
+```GraphQL
+directive @auth(
+  requiresAdmin: Boolean = false
+) on FIELD_DEFINITION | OBJECT
+```
+
 ```TypeScript
 interface Context {
   auth?: {
@@ -111,15 +117,15 @@ interface Context {
   }
 }
 
-const Guard: Guard<Context, { requiresAdmin: boolean }> {
+const authGuard: Guard<Context, { requiresAdmin: boolean }> {
   name: 'auth',
   execute: ({ requiresAdmin }) => async (_parent, _args, { auth }) => {
     if (!auth) {
-      throw new MyGraphQLServerError('Unauthorized');
+      throw new Error('Unauthorized');
     }
 
     if (requiresAdmin && !auth.isAdmin) {
-      throw new MyGraphQLServerError('Forbidden');
+      throw new Error('Forbidden');
     }
   }
 }
